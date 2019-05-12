@@ -34,7 +34,6 @@ setuptools.setup(
     description='Sphinx "jsondomain" extension: Describe JSON document structures in sphinx',
     long_description=long_desc,
     zip_safe=False,
-    py_modules=['sphinxjsondomain'],
     install_requires=read_requirements('installation.txt'),
     classifiers=[
         'Development Status :: 4 - Beta',
