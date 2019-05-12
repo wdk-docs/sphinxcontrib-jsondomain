@@ -3,7 +3,10 @@
 import os.path
 
 import setuptools
+from setuptools import setup, find_packages
 
+with open('README.rst', 'r') as f_readme:
+    long_desc = f_readme.read()
 
 def read_requirements(name):
     requirements = []
@@ -18,23 +21,30 @@ def read_requirements(name):
                 requirements.append(line)
     return requirements
 
-
 setuptools.setup(
-    name='sphinx-jsondomain',
-    version='0.0.3',
-    url='https://github.com/dave-shawley/sphinx-jsondomain',
-    description='Describe JSON document structures in sphinx',
-    long_description='\n'+open('README.rst').read(),
+    name='sphinxcontrib-jsondomain',
+    version='2.0.0',
+    url='https://github.com/wdk-docs/sphinxcontrib-jsondomain',
+    download_url='',
     license='BSD',
-    author='Dave Shawley',
-    author_email='daveshawley+python@gmail.com',
+    author='Band Cap',
+    author_email='bandcap@d3f.pw',
+    maintainer='Band Cap',
+    maintainer_email='bandcap@d3f.pw',
+    description='Sphinx "jsondomain" extension: Describe JSON document structures in sphinx',
+    long_description=long_desc,
+    zip_safe=False,
     py_modules=['sphinxjsondomain'],
     install_requires=read_requirements('installation.txt'),
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
+        'Topic :: Documentation',
+        'Topic :: Utilities',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
@@ -42,4 +52,8 @@ setuptools.setup(
         'Programming Language :: Python :: 3.4',
         'Framework :: Sphinx :: Extension',
     ],
+    platforms='any',
+    packages=find_packages(),
+    include_package_data=True,
+    namespace_packages=['sphinxcontrib'],
 )

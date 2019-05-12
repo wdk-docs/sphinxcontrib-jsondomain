@@ -1,14 +1,13 @@
 import alabaster
 
-
-project = 'sphinx-jsondomain'
-copyright = '2016, Dave Shawley'
-release = '0.0'
-version = '0.0.2'
+project = 'sphinxcontrib-jsondomain'
+copyright = '2019, Band Cap'
+release = '2.0'
+version = '2.0.19'
 needs_sphinx = '1.0'
 extensions = [
     'sphinx.ext.intersphinx',
-    'sphinxjsondomain',
+    'sphinxcontrib-jsondomain',
 ]
 
 master_doc = 'index'
@@ -21,8 +20,8 @@ html_sidebars = {
 }
 html_theme_options = {
     'description': 'Describe JSON documents',
-    'github_user': 'dave-shawley',
-    'github_repo': 'sphinx-jsondomain',
+    'github_user': 'wdk-docs',
+    'github_repo': 'sphinxcontrib-jsondomain',
     'extra_nav_links': {'Index': 'genindex.html'},
 }
 intersphinx_mapping = {
