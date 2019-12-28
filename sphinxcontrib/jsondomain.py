@@ -1,12 +1,27 @@
+"""
+    sphinxcontrib.jsondomain
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+    The HTTP domain for documenting RESTful HTTP APIs.
+
+    :copyright: Copyright 2011 by Hong Minhee
+    :license: BSD, see LICENSE for details.
+
+"""
+
 import json
 import re
-
+import os
+from os import path
 from docutils import nodes
 from docutils.parsers.rst import directives as rst_directives
 from sphinx import addnodes, directives, domains, roles
 from sphinx.util import docfields
 from sphinx.util import nodes as node_utils
 import faker
+from sphinx.locale import get_translation
+MESSAGE_CATALOG_NAME = 'sphinxcontrib-httpdomain'
+_ = get_translation(MESSAGE_CATALOG_NAME)
 
 try:
     import yaml
@@ -512,4 +527,7 @@ def normalize_object_name(obj_name):
 
 
 def setup(app):
+    package_dir = path.abspath(path.dirname(__file__))
+    locale_dir = os.path.join(package_dir, 'locale')
+    app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
     app.add_domain(JSONDomain)

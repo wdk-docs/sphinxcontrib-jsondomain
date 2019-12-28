@@ -8,6 +8,7 @@ from setuptools import setup, find_packages
 with open('README.rst', 'r') as f_readme:
     long_desc = f_readme.read()
 
+
 def read_requirements(name):
     requirements = []
     with open(os.path.join('requires', name)) as req_file:
@@ -21,9 +22,10 @@ def read_requirements(name):
                 requirements.append(line)
     return requirements
 
+
 setuptools.setup(
     name='sphinxcontrib-jsondomain',
-    version='2.0.0',
+    version='2.0.19',
     url='https://github.com/wdk-docs/sphinxcontrib-jsondomain',
     download_url='',
     license='BSD',
@@ -48,7 +50,7 @@ setuptools.setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.7',
         'Framework :: Sphinx :: Extension',
     ],
     platforms='any',
